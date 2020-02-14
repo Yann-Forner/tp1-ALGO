@@ -4,7 +4,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Integer> monTableau = generate(10);
-        Tri<Integer> tri = new TriRapide<Integer>();
+        Tri<Integer> tri = new TriParTas<>();
 
         System.out.println(tri.trier(monTableau));
     }

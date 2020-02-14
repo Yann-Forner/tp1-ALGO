@@ -23,19 +23,20 @@ public class TriFusion<E extends Comparable<E>> implements Tri {
     }
 
     public ArrayList<E> fusion (ArrayList<E> a, ArrayList<E> b) {
-        if (a.isEmpty()) {
-            return b;
-        }
-        if (b.isEmpty()) {
-            return a;
-        }
+
         ArrayList<E> s = new ArrayList<>();
-        if (a.get(0).compareTo(b.get(0)) > 0) {
-            s.add(b.remove(0));
-        } else {
-            s.add(a.remove(0));
+        while (!a.isEmpty() && !b.isEmpty()) {
+            if (a.get(0).compareTo(b.get(0)) > 0) {
+                s.add(b.remove(0));
+            } else {
+                s.add(a.remove(0));
+            }
         }
-        s.addAll(fusion(a, b));
+
+        s.addAll(a);
+        s.addAll(b);
+
         return s;
     }
+
 }

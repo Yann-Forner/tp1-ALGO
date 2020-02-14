@@ -13,6 +13,8 @@ public class TriRapide<E extends Comparable<E>> extends swapTri<E> {
     public void triController(ArrayList<E> monTableau , int low , int high){
         if(low < high){
             int pi = partition(monTableau,low,high);
+            System.out.println(pi);
+
             triController(monTableau,low,pi-1);
             triController(monTableau,pi+1,high);
         }
